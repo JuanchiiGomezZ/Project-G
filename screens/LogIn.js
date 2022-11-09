@@ -27,7 +27,7 @@ const LogIn = ({navigation}) => {
           {
             text: "Continue",
             onPress: () => {
-              navigation.navigate("Home", {email:userEmail});
+              navigation.navigate("TabNavigation", {email:userEmail});
             },
           },
         ]);

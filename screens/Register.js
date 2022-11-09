@@ -28,7 +28,7 @@ const Register = ({navigation}) => {
           {
             text: "Continue",
             onPress: () => {
-              navigation.navigate("Home");
+              navigation.navigate("TabNavigation");
             },
           },
         ]);

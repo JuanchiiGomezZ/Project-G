@@ -1,2 +1,10 @@
 1) API de ejercicios
-2) 
+2) Seleccionar musculo del ejercicio y con este dato poner una imagen del musculo en Routine Detail
+3) Al entrar al excerciseDetail mostrará una tabla con el último peso hecho del ejercicio
+4) Ejercicios combinados arreglar
+5) Hacer bien con componentes el register y Login
+rgb(17, 173, 255)
+rgba(18, 255, 109, 1)
+rgba(248, 255, 35, 0.8)
+rgba(255, 152, 35, 0.8)
+rgba(252, 27, 27, 1)

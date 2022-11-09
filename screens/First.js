@@ -10,7 +10,7 @@ import {signInWithPopup, FacebookAuthProvider } from "firebase/auth";
 import { auth } from "../firebaseConfig"
 
 export default function First  ({navigation}) {
-a
+
 
   const provider = new FacebookAuthProvider()
   const handleGoogleSignIn = () => {
