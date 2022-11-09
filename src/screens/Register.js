@@ -12,7 +12,7 @@ import {
 import { BlurView } from "expo-blur";
 import React from "react";
 import {createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebaseConfig";
+import { auth } from "../utils/firebaseConfig";
 
 const Register = ({navigation}) => {
   const [email, setEmail] = useState("");

@@ -41,7 +41,7 @@ const Routines = ({navigation}) => {
             data={data}
             renderItem={({ item }) => {
               return (
-                <TouchableOpacity style={{ marginVertical: 5 }} key={item.name} onPress={()=>{navigation.navigate("RoutineDetail", {routineId:item.id});}}>
+                <TouchableOpacity style={{ marginVertical: 5 }} key={item.id} onPress={()=>{navigation.navigate("RoutineDetail", {routineId:item.id});}}>
                   <View style={styles.routineCard}>
                     <View
                       style={[

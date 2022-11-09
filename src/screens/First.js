@@ -7,20 +7,11 @@ import {
   TouchableOpacity,
 } from "react-native";
 import {signInWithPopup, FacebookAuthProvider } from "firebase/auth";
-import { auth } from "../firebaseConfig"
+import { auth } from "../utils/firebaseConfig"
 
 export default function First  ({navigation}) {
 
 
-  const provider = new FacebookAuthProvider()
-  const handleGoogleSignIn = () => {
-    signInWithPopup(auth, provider).then((result) =>{
-      console.log(result)
-
-    }).catch((error) => {
-      console.log(error)
-    })
-  }
  
 
   return (
@@ -30,16 +21,6 @@ export default function First  ({navigation}) {
         style={[StyleSheet.absoluteFill]}
       />
       <View style={styles.btnsContainer}>
-        <TouchableOpacity style={styles.registerBtn} onPress={handleGoogleSignIn} >
-          <Image
-            source={{
-              uri: "https://rotulosmatesanz.com/wp-content/uploads/2017/09/2000px-Google_G_Logo.svg_.png",
-            }}
-            style={styles.registerLogo}
-            
-          />
-          <Text style={styles.registerText}>Sign Up with Google</Text>
-        </TouchableOpacity>
         <TouchableOpacity style={styles.registerBtn} onPress={() =>{navigation.navigate('Register')}}>
           <Image
             source={{

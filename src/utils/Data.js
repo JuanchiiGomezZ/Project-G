@@ -66,8 +66,8 @@ const data = [
     ],
   },
   {
-    dia: "MON",
-    nombre: "Espalda y Triceps",
+    dia: "THU",
+    nombre: "Pecho y Hombros",
     id: 4,
     routine: [
       {
@@ -88,8 +88,8 @@ const data = [
     ],
   },
   {
-    dia: "MON",
-    nombre: "Espalda y Triceps",
+    dia: "FRI",
+    nombre: "Full Body",
     id: 5,
     routine: [
       {
@@ -109,8 +109,9 @@ const data = [
       },
     ],
   },
+
   {
-    dia: "MON",
+    dia: "SAT",
     nombre: "Espalda y Triceps",
     id: 6,
     routine: [
@@ -131,50 +132,7 @@ const data = [
       },
     ],
   },
-  {
-    dia: "MON",
-    nombre: "Espalda y Triceps",
-    id: 7,
-    routine: [
-      {
-        name: "Dominadas 3 tomas",
-        sets: "4",
-        reps: "12 | 10 | 8 | 6",
-      },
-      {
-        name: "Bicep W",
-        sets: "4",
-        reps: "12 | 10 | 10 | 8",
-      },
-      {
-        name: "Polea Dorsal",
-        sets: "3",
-        reps: "12 | 10 | 8",
-      },
-    ],
-  },
-  {
-    dia: "MON",
-    nombre: "Espalda y Triceps",
-    id: 8,
-    routine: [
-      {
-        name: "Dominadas 3 tomas",
-        sets: "4",
-        reps: "12 | 10 | 8 | 6",
-      },
-      {
-        name: "Bicep W",
-        sets: "4",
-        reps: "12 | 10 | 10 | 8",
-      },
-      {
-        name: "Polea Dorsal",
-        sets: "3",
-        reps: "12 | 10 | 8",
-      },
-    ],
-  },
+
 ];
 
 export default data;

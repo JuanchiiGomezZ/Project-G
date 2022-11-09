@@ -33,11 +33,11 @@ export const TabNavigation = () => {
           ),
         }}
       />
-      <Tab.Screen
+            <Tab.Screen
         name="Profile"
         component={Profile}
         options={{
-          tabBarIcon: ({ color}) => (
+          tabBarIcon: ({ color }) => (
             <Ionicons name="person-circle" size={30} color={color} />
           ),
         }}
@@ -47,14 +47,14 @@ export const TabNavigation = () => {
 };
 
 const Stack = createNativeStackNavigator();
-const MainStack = () => {
+const Navigation = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
         initialRouteName="First"
       >
-        {/* <Stack.Screen
+        <Stack.Screen
             name='First'
             component={First}/>
             <Stack.Screen
@@ -62,7 +62,7 @@ const MainStack = () => {
             component={Register}/>
             <Stack.Screen
             name='LogIn'
-            component={LogIn}/> */}
+            component={LogIn}/>
         <Stack.Screen name="TabNavigation" component={TabNavigation} />
         <Stack.Screen name="RoutineDetail" component={RoutineDetail} />
       </Stack.Navigator>
@@ -70,4 +70,4 @@ const MainStack = () => {
   );
 };
 
-export default MainStack;
+export default Navigation;

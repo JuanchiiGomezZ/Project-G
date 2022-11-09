@@ -11,7 +11,7 @@ import {
 import { BlurView } from "expo-blur";
 import React from "react";
 import { signInWithEmailAndPassword} from 'firebase/auth';
-import { auth } from "../firebaseConfig";
+import { auth } from "../utils/firebaseConfig";
 
 
 const LogIn = ({navigation}) => {

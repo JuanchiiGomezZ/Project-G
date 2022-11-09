@@ -1,11 +1,11 @@
 import React from 'react'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import MainStack from './navigation/MainStack'
+import Navigation from './src/navigation/Navigation'
 
 export default function App() {
   return (
     <SafeAreaView style={{flex:1}}>
-      <MainStack/>
+      <Navigation/>
     </SafeAreaView>
   )
 }
