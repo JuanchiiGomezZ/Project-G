@@ -1,8 +1,9 @@
 1) API de ejercicios
 2) Seleccionar musculo del ejercicio y con este dato poner una imagen del musculo en Routine Detail
 3) Al entrar al excerciseDetail mostrará una tabla con el último peso hecho del ejercicio
-4) Ejercicios combinados arreglar
+4) Agregar en la creacion del ejercicio un check de Biserie
 5) Hacer bien con componentes el register y Login
+6) Maximo 7 rutinas por cuenta
 rgb(17, 173, 255)
 rgba(18, 255, 109, 1)
 rgba(248, 255, 35, 0.8)

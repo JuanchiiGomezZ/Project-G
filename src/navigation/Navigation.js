@@ -33,7 +33,7 @@ export const TabNavigation = () => {
           ),
         }}
       />
-            <Tab.Screen
+      <Tab.Screen
         name="Profile"
         component={Profile}
         options={{
@@ -52,17 +52,10 @@ const Navigation = () => {
     <NavigationContainer>
       <Stack.Navigator
         screenOptions={{ headerShown: false }}
-        initialRouteName="First"
-      >
-        <Stack.Screen
-            name='First'
-            component={First}/>
-            <Stack.Screen
-            name='Register'
-            component={Register}/>
-            <Stack.Screen
-            name='LogIn'
-            component={LogIn}/>
+        initialRouteName="First">
+        {/* <Stack.Screen name="First" component={First} />
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="LogIn" component={LogIn} /> */}
         <Stack.Screen name="TabNavigation" component={TabNavigation} />
         <Stack.Screen name="RoutineDetail" component={RoutineDetail} />
       </Stack.Navigator>

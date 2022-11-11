@@ -6,85 +6,115 @@ import {
   StyleSheet,
   TouchableOpacity,
   ScrollView,
-  ActivityIndicator,
-  FlatList,
+  ActivityIndicator
 } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import data from "../utils/Data";
+import ModalCreateRoutine from "../components/ModalCreateRoutine";
 
-const Routines = ({navigation}) => {
+
+
+const Routines = ({ navigation }) => {
+
+  const imageColor = (props) =>{
+    if(props === "MON" || props === "LUN"){
+      return("rgb(17, 173, 255)")
+    }
+    else if (props === "TUE" ){
+      return("rgb(18, 255, 109)")
+    }
+    else if (props === "THU" ){
+      return("rgb(253, 75, 167)")
+    }
+    else if (props === "WED" ){
+      return("rgb(248, 255, 35)")
+    }
+    else if (props === "FRI" ){
+      return("rgb(255, 152, 35)")
+    }
+    else if (props === "SAT" ){
+      return("rgb(252, 27, 27)")
+    }
+    else if (props === "SUN" ){
+      return("rgb(197, 102, 248)")
+    }
+  }
+
+
   const [loaded] = useFonts({
     Bebas: require("../assets/fonts/BebasNeue-Regular.ttf"),
   });
 
-  
-  const colors = (props) =>{
-    
-    if(props === "MON"){
-      return("{backgroundColor:'red'}")
-    }else if (props == "TUE"){
-      return("{backgroundColor:'blue'}")
-    }
-  }
+  const [showModal, setShowModal] = useState(false)
 
   if (loaded) {
     return (
       <View style={{ flex: 1, backgroundColor: "#1c1d1e" }}>
         <Text style={styles.title}>Routines</Text>
         <View style={styles.addExcerciseBtn}>
-          <TouchableOpacity>
-            <AntDesign name="pluscircle" size={45} color="rgb(248,8,8)" />
+          <TouchableOpacity onPress={() =>{setShowModal(true)}}>
+            <AntDesign name="pluscircle" size={50} color="rgb(248,8,8)" />
           </TouchableOpacity>
         </View>
-        <View style={styles.routinesContainer}>
-          <FlatList
-            data={data}
-            renderItem={({ item }) => {
-              return (
-                <TouchableOpacity style={{ marginVertical: 5 }} key={item.id} onPress={()=>{navigation.navigate("RoutineDetail", {routineId:item.id});}}>
-                  <View style={styles.routineCard}>
-                    <View
-                      style={[
-                        styles.imgRoutine,
-                        {backgroundColor:'rgb(17, 173, 255)'}
-                      ]}
-                    >
-                      <Text
-                        style={{
-                          fontSize: 35,
-                          fontFamily: "Bebas",
-                          color: "#1c1d1e",
-                        }}
-                      >
-                        {item.dia}
-                      </Text>
-                    </View>
-                    <Text style={styles.nameRoutine}>{item.nombre}</Text>
-                  </View>
+        <ModalCreateRoutine showModal={{showModal, setShowModal}}/>
+        <ScrollView style={styles.routinesContainer}>
+          {data.map((item) => {
+            
+            return (
+              <TouchableOpacity
+                style={{ marginVertical: 5 }}
+                key={item.id}
+                onPress={() => {
+                  navigation.navigate("RoutineDetail", { routineId: item.id });
+                }}
+              >
+                <View style={styles.routineCard}>
                   <View
-                    style={{
-                      height: 3,
-                      backgroundColor: "rgb(87, 87, 87)",
-                      marginHorizontal: 25,
-                    }}
-                  ></View>
-                </TouchableOpacity>
-              );
-            }}
-          />
-        </View>
+                    style={[
+                      styles.imgRoutine,
+                      { backgroundColor: imageColor(item.dia) },
+                    ]}
+                  >
+                    <Text
+                      style={{
+                        fontSize: 35,
+                        fontFamily: "Bebas",
+                        color: "#1c1d1e",
+                      }}
+                    >
+                      {item.dia}
+                    </Text>
+                  </View>
+                  <Text style={styles.nameRoutine}>{item.nombre}</Text>
+                </View>
+                <View
+                  style={{
+                    height: 3,
+                    backgroundColor: "rgb(87, 87, 87)",
+                    marginHorizontal: 25,
+                  }}
+                ></View>
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
       </View>
     );
   } else {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#f2c105" />
+        <ActivityIndicator size="large" color="white" />
       </View>
     );
   }
 };
 
 export default Routines;
+
+
+
+
+
 
 const styles = StyleSheet.create({
   loadingContainer: {
@@ -105,7 +135,7 @@ const styles = StyleSheet.create({
   },
   routinesContainer: {
     marginTop: 20,
-    marginBottom:80,
+    marginBottom: 20,
   },
   routineCard: {
     flexDirection: "row",
@@ -128,7 +158,10 @@ const styles = StyleSheet.create({
     fontFamily: "Bebas",
     marginLeft: 20,
   },
-  MON:{
-    backgroundColor:'red'
-  }
+  MON: {
+    backgroundColor: "red",
+  },
+
+
+  
 });
